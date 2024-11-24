@@ -3,6 +3,17 @@ import React, { useState } from 'react';
 function CreateForm({ onAddArticle }) {
     const [newArticle, setNewArticle] = useState('');
 
+
+    const [formData, setFormData] = useState({
+        title: '',
+        image: '',
+        content: '',
+        category: '',
+        tags: [],
+        isPublished: false,
+    });
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (newArticle.trim()) {
